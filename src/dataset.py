@@ -18,16 +18,16 @@ def get_dataloader(
     test_dir = os.path.join(data_dir, "test")
 
     train_transform = transforms.Compose([
-        transforms.grayscale(num_output_channels=1),
-        transforms.resize((48, 48)),
+        transforms.Grayscale(num_output_channels=1),
+        transforms.Resize((48, 48)),
         transforms.RandomHorizontalFlip(p=0.5),
         transforms.ToTensor(),
         transforms.Normalize(mean=[0.5], std=[0.5])
     ])
 
     test_transform = transforms.Compose([
-        transforms.grayscale(num_output_channels=1),
-        transforms.resize((48,48)),
+        transforms.Grayscale(num_output_channels=1),
+        transforms.Resize((48,48)),
         transforms.ToTensor(),
         transforms.Normalize(mean=[0.5,], std=[0.5])
     ])
